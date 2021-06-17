@@ -1,2 +1,0 @@
-class PoatTagRelation < ApplicationRecord
-end

@@ -1,14 +1,30 @@
-<main class="main">
-  <div class="inner">
-    <%# if user_signed_in? %>
-      <%#<div class="greeting">
-        こんにちは、
-        <%#= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
-      </div>
-    <%# end %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
-    </div>
+<div class="header">
+  <div class="inner-header">
+    
+    
   </div>
-</main>
+</div>
 
+
+
+<div class="main">
+  <div class="message-wrap">
+    <% @posts.each do |post|%>
+      <div class="message">
+        <p class="title">
+          <%= post.title %>
+        </p>
+        <p class="text">
+          <%= post.text %>
+        </p>
+        <ul class="tag">
+          <li class="tag-list">
+            <%post.tags.each do |tag| %>
+              #<%=tag.name%>
+            <%end%>
+          </li>
+        </ul>
+      </div>
+    <%end%>
+  </div>
+</div>

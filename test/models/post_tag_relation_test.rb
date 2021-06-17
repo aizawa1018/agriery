@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PoatTagRelationTest < ActiveSupport::TestCase
+class PostTagRelationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
