@@ -67,12 +67,6 @@
   align-items: center;
 }
 
-.text{
-  height: 20%;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-}
 
 .tag{
   height: 40%;
@@ -83,5 +77,12 @@
 }
 
 .tag-list{
-  margin-bottom: 150px;
+  margin-bottom: 10px;
+}
+
+.posts-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
 }

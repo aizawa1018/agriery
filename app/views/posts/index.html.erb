@@ -4,19 +4,17 @@
     
   </div>
 </div>
-
-
-
 <div class="main">
   <div class="message-wrap">
     <% @posts.each do |post|%>
       <div class="message">
         <p class="title">
-          <%= post.title %>
+          <%#= post.title %>
+          <%#= link_to "詳細",  post_path(post.id), method: :get %>
+
+          <%=link_to post.title, "/posts/#{post.id}"%>
         </p>
-        <p class="text">
-          <%= post.text %>
-        </p>
+                   
         <ul class="tag">
           <li class="tag-list">
             <%post.tags.each do |tag| %>

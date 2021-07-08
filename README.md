@@ -66,7 +66,7 @@ Things you may want to cover:
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | text    | text       | null: false                    |
-| tag     | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
 | post    | references | null: false, foreign_key: true |
 
 ### Association

@@ -1,0 +1,39 @@
+<div class="contents row">
+    <div class="more">
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', post_path(@post.id), method: :delete %>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+    <p><%= @post.text %></p>
+    <span class="name"><%= @post.title %><%=@post.text%>
+    </span>
+     </div>
+    
+ 
+    <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+      </strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
+  
+</div>
