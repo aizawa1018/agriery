@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :show]
+  before_action :set_post, only: [:edit, :show, :update, :destroy]
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -20,21 +20,37 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    @post.destroy
   end
 
   def edit
+    @poststag = PostsTag.new(title: @post.title, text: @post.text)
+  end
+
+  def update
+    @poststag = PostsTag.new(update_params,title: @post.title, text: @post.text)
+    if @poststag.valid?
+       @poststag.update
+       redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def show
+    @poststag = PostsTag.new(title: @post.title, text: @post.text)
     @comment = Comment.new
     @comments = @post.comment.includes(:user)
   end
 
   private
+
   def post_params
-    params.require(:posts_tag).permit(:title, :text, :name).merge(user_id: current_user.id)
+    params.permit(:title, :text, :name).merge(user_id: current_user.id)
+  end
+
+  def update_params
+    params.permit(:title, :text, :name).merge(user_id: current_user.id, post_id: params[:id])
   end
 
   def set_post

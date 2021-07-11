@@ -10,9 +10,12 @@
       </ul>
     </div>
     <div class="container">
-    <p><%= @post.text %></p>
-    <span class="name"><%= @post.title %><%=@post.text%>
-    </span>
+
+    <%= form_with model: @poststag, url: posts_path, local: true  do |form| %>
+      <%= form.text_field :title %>
+      <%= form.text_field :name %>
+      <%= form.text_area :text %>
+    <% end %>
      </div>
     
  

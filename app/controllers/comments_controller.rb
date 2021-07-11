@@ -1,13 +1,11 @@
 class CommentsController < ApplicationController
 
   def create
-    Comment.create(comment_params)
+    comment = Comment.create(comment_params)
     redirect_to "/posts/#{comment.post.id}"
   end
 
-  def show
-    @comments = Comment.find(params[:id])
-  end
+  
 
   private
   def comment_params

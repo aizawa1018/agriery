@@ -9,8 +9,6 @@
     <% @posts.each do |post|%>
       <div class="message">
         <p class="title">
-          <%#= post.title %>
-          <%#= link_to "詳細",  post_path(post.id), method: :get %>
 
           <%=link_to post.title, "/posts/#{post.id}"%>
         </p>
