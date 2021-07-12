@@ -1,0 +1,14 @@
+<div class="message">
+        <p class="title">
+
+          <%=link_to post.title, "/posts/#{post.id}"%>
+        </p>
+                   
+        <ul class="tag">
+          <li class="tag-list">
+            <%post.tags.each do |tag| %>
+              #<%=tag.name%>
+            <%end%>
+          </li>
+        </ul>
+      </div>

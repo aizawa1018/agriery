@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @posts = Post.includes(:user).order(created_at: :desc)
@@ -10,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @poststag = PostsTag.new(post_params)
     if @poststag.valid?
       @poststag.save
@@ -43,6 +45,10 @@ class PostsController < ApplicationController
     @comments = @post.comment.includes(:user)
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
   private
 
   def post_params
@@ -55,5 +61,11 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
