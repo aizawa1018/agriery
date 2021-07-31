@@ -40,11 +40,6 @@ Qiitaをイメージした農業のインプット、アウトプットに特化
 |投稿編集・削除機能|投稿者本人のみ投稿編集・削除が可能|
 |ユーザー詳細表示機能|投稿一覧が閲覧可能|
 |コメント機能|投稿詳細ページからコメントが可能|
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
 
 # 使用言語
   <br>・Ruby
