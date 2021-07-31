@@ -41,10 +41,10 @@ Qiitaをイメージした農業のインプット、アウトプットに特化
 | コメント機能	　　　　　　　　 | 投稿詳細ページからコメントが可能　　　　 |
 
 # 使用言語
-  ・Ruby
-  ・Ruby on Rails
-  ・HTML/CSS
-  ・SQL
+  <br>・Ruby
+  <br>・Ruby on Rails
+  <br>・HTML/CSS
+  <br>・SQL
 
 
 ## users テーブル
