@@ -1,7 +1,7 @@
 <div class="contents row">
   <div class="container">
     <h3>編集する</h3>
-    <%= form_with model: @poststag, url: posts_path, local: true  do |form| %>
+    <%= form_with model: @poststag, url: "/posts/#{@post.id}",method:"put", local: true  do |form| %>
       <%= form.text_field :title, placeholder: "Nickname" %>
       <%= form.text_field :name, placeholder: "tag" %>
       <%= form.text_area :text, placeholder: "text", rows: "10" %>

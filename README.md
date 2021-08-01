@@ -89,5 +89,3 @@ Things you may want to cover:
 - has_many :comment
 - belongs_to :user
 
-
-    params.require(:posts_tag).permit(:title, :text, :name).merge(user_id: current_user.id)

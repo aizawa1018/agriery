@@ -11,11 +11,17 @@
     </div>
     <div class="container">
 
-    <%= form_with model: @poststag, url: posts_path, local: true  do |form| %>
-      <%= form.text_field :title %>
-      <%= form.text_field :name %>
-      <%= form.text_area :text %>
-    <% end %>
+    <p><%= @post.title %></p>
+    <p><%= @post.text %></p>
+    <p><%= @post.tags %></p>
+
+
+
+    <%#= form_with model: @poststag, url: posts_path, local: true  do |form| %>
+      <%#= form.text_field :title %>
+      <%#= form.text_field :name %>
+      <%#= form.text_area :text %>
+    <%# end %>
      </div>
     
  

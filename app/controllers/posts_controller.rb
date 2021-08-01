@@ -7,13 +7,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @poststag = PostsTag.new
+    @poststag = PostTagRelation.new
   end
 
   def create
-    binding.pry
     @poststag = PostsTag.new(post_params)
-    if @poststag.valid?
+    if #@poststag.valid?
       @poststag.save
       return redirect_to root_path
     else
@@ -26,11 +25,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @poststag = PostsTag.new(title: @post.title, text: @post.text)
+    @poststag = PostsForm.new(post: @post)
   end
 
   def update
-    @poststag = PostsTag.new(update_params,title: @post.title, text: @post.text)
+    binding.pry
+    #@post = current_user.posts.find(params[:id])
+    @poststag = PostsForm.new(update_params)
     if @poststag.valid?
        @poststag.update
        redirect_to root_path
@@ -40,7 +41,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @poststag = PostsTag.new(title: @post.title, text: @post.text)
     @comment = Comment.new
     @comments = @post.comment.includes(:user)
   end
@@ -52,11 +52,11 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:title, :text, :name).merge(user_id: current_user.id)
+    params.require(:posts_tag).permit(:title, :text, :name).merge(user_id: current_user.id)
   end
 
   def update_params
-    params.permit(:title, :text, :name).merge(user_id: current_user.id, post_id: params[:id])
+     params.require(:posts_tag).permit(:title, :text, :name).merge(user_id: current_user.id, post_id: params[:id])
   end
 
   def set_post
@@ -68,4 +68,6 @@ class PostsController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  
 end
