@@ -1,28 +1,51 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Agriery
+Qiitaをイメージした農業のインプット、アウトプットに特化したアプリケーション
 
-Things you may want to cover:
+# 概要
+### 考えや価値観を共有し自身の成長を促す
 
-* Ruby version
+農業の最新情報や農場の問題点を解決するには、
+<br>・講習会に参加
+<br>・専門誌を読み勉強する
+<br>・関係団体（農協、NOSAI）近隣の農家に相談する
+<br>など、おおまかにこの３つがあります。
+講習会や本から得た情報をどう活かすか人それぞれあります。
+それらの思想をインプット、アウトプットをし、さらにはアクションプランも共有することで講習会や本だけでは得られない価値をユーザー同士で共有しあえます。
+価値観を広げることで新たな挑戦の機会を得たり、 苦手だったものを克服できるきっかけにもなり、自分自身の成長にも繋がります。
 
-* System dependencies
+# Agriery URL
+ ##### デプロイ後にURLを貼る
+ 
+ # 利用方法
+ 　　<br>・トップページから新規登録・ログイン
+ 　　<br>・一覧画面から遷移
+ 　　<br>・新規投稿は右上の投稿をクリック、タイトル、内容、タグを記入後投稿する
+ 　　<br>・投稿後は一覧に戻る
+ 
+ ##### 完成後動画で説明
+ 
+ 
+ # 目指した課題解決
+ 自身が持っている課題を解決するため取り組んだことを記入し苦労したこと、新たな問題点、結果をアウトプットの行い他のユーザーに情報共有したり助言をできるようにしました。
+ 
+# 機能一覧
 
-* Configuration
+|            機能       |             概要             | 
+| ------------------   | ---------------------------- | 
+| ユーザー管理機能        | 新規登録・ログイン・ログアウトが可能   |
+| 投稿機能              | 記事の投稿が可能                |
+|投稿詳細機能|各投稿詳細が詳細ページで閲覧可能|　
+|投稿編集・削除機能|投稿者本人のみ投稿編集・削除が可能|
+|ユーザー詳細表示機能|投稿一覧が閲覧可能|
+|コメント機能|投稿詳細ページからコメントが可能|
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+# 使用言語
+  <br>・Ruby
+  <br>・Ruby on Rails
+  <br>・HTML/CSS
+  <br>・SQL
 
 
 ## users テーブル
@@ -88,4 +111,5 @@ Things you may want to cover:
 - has_many :tags, through: :post_tag_relations
 - has_many :comment
 - belongs_to :user
+
 
