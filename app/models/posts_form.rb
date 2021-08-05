@@ -1,7 +1,7 @@
 class PostsForm
 
   include ActiveModel::Model
-  attr_accessor :text,:title,:user_id, :name
+  attr_accessor :text,:title,:user_id, :name, :post_id
 
   with_options presence: true do
     validates :name

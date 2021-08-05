@@ -29,7 +29,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    binding.pry
     #@post = current_user.posts.find(params[:id])
     @poststag = PostsForm.new(update_params)
     if @poststag.valid?
@@ -56,7 +55,7 @@ class PostsController < ApplicationController
   end
 
   def update_params
-     params.require(:posts_tag).permit(:title, :text, :name).merge(user_id: current_user.id, post_id: params[:id])
+    params[:post].permit(:title, :name, :text).merge(user_id: current_user.id, post_id: params[:id])
   end
 
   def set_post
@@ -69,5 +68,6 @@ class PostsController < ApplicationController
     end
   end
 
+  
   
 end
