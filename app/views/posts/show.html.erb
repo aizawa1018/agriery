@@ -13,9 +13,9 @@
 
     <p><%= @post.title %></p>
     <p><%= @post.text %></p>
-    <p><%= @post.tags %></p>
-
-
+    <% @post.tags.each do |tag| %>
+      <p><%= tag.name %></p>
+    <% end %>
 
     <%#= form_with model: @poststag, url: posts_path, local: true  do |form| %>
       <%#= form.text_field :title %>
@@ -23,8 +23,6 @@
       <%#= form.text_area :text %>
     <%# end %>
      </div>
-    
- 
     <div class="container">
     <% if user_signed_in? %>
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
@@ -44,5 +42,5 @@
         </p>
       <% end %>
     </div>
-  
+
 </div>
