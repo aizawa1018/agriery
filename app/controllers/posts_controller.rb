@@ -7,13 +7,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @poststag = PostTagRelation.new
+    @poststag = PostsForm.new
   end
 
   def create
-    @poststag = PostsTag.new(post_params)
-    if #@poststag.valid?
-      @poststag.save
+    @poststag = PostsForm.new(post_params)
+    if @poststag.save
       return redirect_to root_path
     else
       render "new"
@@ -25,14 +24,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    load_post
     @poststag = PostsForm.new(post: @post)
   end
 
   def update
-    #@post = current_user.posts.find(params[:id])
-    @poststag = PostsForm.new(update_params)
-    if @poststag.valid?
-       @poststag.update
+    load_post
+    @poststag = PostsForm.new(post_params, post: @post)
+    if @poststag.save
        redirect_to root_path
     else
       render :edit
@@ -51,12 +50,12 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:posts_tag).permit(:title, :text, :name).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :name).merge(user_id: current_user.id)
   end
 
-  def update_params
-    params[:post].permit(:title, :name, :text).merge(user_id: current_user.id, post_id: params[:id])
-  end
+  def load_post
+    @post = current_user.posts.find(params[:id])
+  end 
 
   def set_post
     @post = Post.find(params[:id])
@@ -68,6 +67,4 @@ class PostsController < ApplicationController
     end
   end
 
-  
-  
 end

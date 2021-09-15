@@ -1,14 +1,17 @@
 <div class="contents row">
   <p><%= @nickname %>さんの投稿一覧</p>
-
-   
+  <div class="content">
+  <div class="contents row">
 
   <% @posts.each do |post| %>
-    <%# <div class="content_post" style="background-image: url(<%= post.title %>);">
-       <p><%= post %></p>
-       <span class="name"><%= post %></span>
+  <div class = "table">
+       <p><%= post.title %></p>
+       <span><%= post.text %></span>
+      <span><%= tag.name %></span>
      </div>
   <% end %>
+  </div>
+  </div>
 </div>
 
 

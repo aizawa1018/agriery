@@ -1,4 +1,6 @@
 <div class="contents row">
+    <div class="container">
+
     <div class="more">
       <ul class="more_list">
         <li>
@@ -10,18 +12,14 @@
       </ul>
     </div>
     <div class="container">
+      <div class ="text">
 
     <p><%= @post.title %></p>
     <p><%= @post.text %></p>
-    <p><%= @post.tags %></p>
-
-
-
-    <%#= form_with model: @poststag, url: posts_path, local: true  do |form| %>
-      <%#= form.text_field :title %>
-      <%#= form.text_field :name %>
-      <%#= form.text_area :text %>
-    <%# end %>
+      <% @post.tags.each do |tag| %>
+      <p><%= tag.name %></p>
+    <% end %>
+     </div>
      </div>
     
  
