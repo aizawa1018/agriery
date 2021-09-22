@@ -888,8 +888,8 @@ div.contents.row div.content_post:after {
   z-index: 1;
   border-radius: 3px;
 }
-
-/*div.contents.row div.content_post .more {
+/* 
+div.contents.row div.content_post .more {
   position: absolute;
   cursor: pointer;
   top: 20px;
@@ -898,13 +898,13 @@ div.contents.row div.content_post:after {
   height: 100px;
   width: 80px;
   text-align: right;
-*/}
+}
 
-/*div.contents.row div.content_post .more:hover ul.more_list {
+div.contents.row div.content_post .more:hover ul.more_list {
   display: block;
-*/}
+ }
 
-/*div.contents.row div.content_post .more ul.more_list {
+div.contents.row div.content_post .more ul.more_list {
   position: absolute;
   text-align: left;
   width: 80px;
@@ -915,25 +915,25 @@ div.contents.row div.content_post:after {
   display: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
-*/}
+}
 
-/*div.contents.row div.content_post .more ul.more_list li {
+div.contents.row div.content_post .more ul.more_list li {
   border-bottom: 1px solid #ddd;
-}*/
+}
 
-/*div.contents.row div.content_post .more ul.more_list li:last-child {
+div.contents.row div.content_post .more ul.more_list li:last-child {
   border-bottom: 0;
-*/}
+}
 
-/*div.contents.row div.content_post .more ul.more_list li a {
+div.contents.row div.content_post .more ul.more_list li a {
   display: block;
   padding: 5px;
-*/}
+}
 
-/*div.contents.row div.content_post .more ul.more_list li a:hover {
+div.contents.row div.content_post .more ul.more_list li a:hover {
   background-color: #57C3E9;
   color: #fff;
-*/}
+} */
 .more_list {
   float: right;
 }
@@ -1067,4 +1067,8 @@ footer p {
   border-collapse: collapse;
   width: 70%;
   padding: 16px 8px;
+}
+
+.text-decoration {
+  text-decoration: underline;
 }
