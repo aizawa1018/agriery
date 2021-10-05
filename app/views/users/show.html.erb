@@ -1,7 +1,6 @@
 <div class="contents row">
+   <div class="content">
   <p><%= @nickname %>さんの投稿一覧</p>
-  <div class="content">
-  <div class="contents row">
 
   <% @posts.each do |post| %>
   <div class = "table">
@@ -10,8 +9,6 @@
       <span><%= tag.name %></span>
      </div>
   <% end %>
-  </div>
-  </div>
 </div>
-
+</div>
 

@@ -935,7 +935,10 @@ div.contents.row div.content_post .more ul.more_list li a:hover {
   color: #fff;
 } */
 .more_list {
-  float: right;
+   float: bottom; 
+   text-decoration: underline; 
+   font-size: 14px; 
+  
 }
 
 div.contents.row div.content_post p {
